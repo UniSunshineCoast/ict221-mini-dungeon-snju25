@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="dungeon.gui.Controller"
+            stylesheets="@styles.css">
+
+    <top>
+        <ToolBar styleClass="toolbar">
+            <Label text="Difficulty:" styleClass="label"/>
+            <ComboBox fx:id="difficultyCombo" styleClass="combo-box"/>
+            <Button text="Start Game" fx:id="startGame" onAction="#startGame"/>
+            <Separator orientation="VERTICAL"/>
+            <Label fx:id="scoreLabel"/>
+            <Label fx:id="hpLabel"/>
+            <Label fx:id="stepsLabel"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <StackPane fx:id="centerStack">
+            <VBox fx:id="welcomeBox"
+                  alignment="CENTER"
+                  spacing="20"
+                  styleClass="welcome-label"
+                  style="-fx-background-color: rgba(45,45,45,0.9); -fx-padding: 20;">
+                <Label text="MINI DUNGEON ADVENTURE" styleClass="welcome-label">
+                    <font><Font size="32"/></font>
+                </Label>
+                <Label text="Embark on a dangerous quest…" style="-fx-text-fill:white;"/>
+                <ImageView fx:id="welcomeImage"
+                           fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                <Button text="START YOUR QUEST" onAction="#startGame"
+                        styleClass="button"/>
+                <Label text="Select difficulty above before starting" style="-fx-text-fill:#AAAAAA;"/>
+            </VBox>
+
+            <GridPane fx:id="gridPane"
+                      styleClass="grid-pane"
+                      visible="false"/>
+        </StackPane>
+    </center>
+
+    <right>
+        <VBox spacing="15"
+              prefWidth="200"
+              alignment="TOP_CENTER"
+              style="-fx-padding: 10;">
+            <Label text="TOP SCORES" style="-fx-font-size:16; -fx-text-fill:gold; -fx-font-weight:bold;"/>
+            <TextArea fx:id="scoreBoard" prefHeight="200" editable="false"/>
+
+            <VBox spacing="10" alignment="CENTER" style="-fx-padding:20 0 0 0;">
+                <Button text="UP" onAction="#handleUp"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="LEFT" onAction="#handleLeft"/>
+                    <Button text="RIGHT" onAction="#handleRight"/>
+                </HBox>
+                <Button text="DOWN" onAction="#handleDown"/>
+            </VBox>
+
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding:20 0 0 0;">
+                <Button text="SAVE" onAction="#handleSave" fx:id="handleSave"/>
+                <Button text="LOAD" onAction="#handleLoad" fx:id="handleLoad"/>
+                <Button text="HELP" onAction="#handleHelp" fx:id="handleHelp"/>
+            </HBox>
+        </VBox>
+    </right>
+
+    <bottom>
+        <VBox style="-fx-padding:10;">
+            <Label text="GAME EVENTS" styleClass="label"/>
+            <TextArea fx:id="statusLog" prefHeight="100" editable="false"/>
+        </VBox>
+    </bottom>
+</BorderPane>

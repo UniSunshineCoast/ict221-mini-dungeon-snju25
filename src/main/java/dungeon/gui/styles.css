@@ -1,0 +1,92 @@
+.root {
+    -fx-background-color: #2d2d2d;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Toolbar */
+.toolbar {
+    -fx-background-color: #3a3a3a;
+}
+.toolbar .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.combo-box {
+    -fx-background-color: #4a4a4a;
+    -fx-text-fill: white;
+}
+
+/* GridPane */
+.grid-pane {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #444;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* ScoreBoard */
+#scoreBoard {
+    -fx-font-family: monospace;
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: white;
+    -fx-padding: 0 10px;
+}
+#welcomeBox .welcome-label {
+    -fx-font-size: 32px;
+    -fx-text-fill: gold;
+    -fx-font-weight: bold;
+}
+#welcomeBox .button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5px;
+}
+
+/* HP & Steps */
+#hpLabel {
+    -fx-text-fill: #FF5252;
+    -fx-font-weight: bold;
+}
+#stepsLabel {
+    -fx-text-fill: #29B6F6;
+}
+
+/* General buttons */
+.button {
+    -fx-background-color: #5C6BC0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-min-width: 80px;
+}
+.button:hover {
+    -fx-background-color: #7986CB;
+}
+
+/* Special IDs */
+#startGame {
+    -fx-background-color: #4CAF50;
+}
+#handleSave, #handleLoad {
+    -fx-background-color: #7E57C2;
+}
+#handleHelp {
+    -fx-background-color: #26A69A;
+}
+
+/* Final score styling in alert */
+.final-score {
+    -fx-font-size: 24px;
+    -fx-text-fill: #FFD700;
+    -fx-font-weight: bold;
+}
